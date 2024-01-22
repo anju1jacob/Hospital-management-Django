@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    body {
+        background-image: url('{% static "image/1.jpg" %}');
+        background-size: cover;
+        background-repeat: repeat;
+
+    }
+
+    a:link {
+        text-decoration: none;
+    }
+
+    .form-content {
+        padding: 5%;
+        margin-bottom: 2%;
+    }
+
+    .form-control {
+        border-radius: 1.5rem;
+    }
+
+    .btnSubmit {
+        border: none;
+        border-radius: 1.5rem;
+        padding: 1%;
+        width: 20%;
+        cursor: pointer;
+        background: #0062cc;
+        color: #fff;
+    }
+</style>
+</style>
+<div class="container">
+    <h2 class="text-center" style="color: white;">Login</h2><br>
+
+    <form method="post" action="loging">
+        {% csrf_token %}
+        <div class="container register-form">
+            <div class="form" style="margin-left: 15%;">
+
+                <div class="form-content" >
+                    <div class="col-md-6">
+
+                        <div class="form-group" >
+                            <input type="text" class="form-control" name="username" placeholder="UserName" style="margin-left: 25%;"><br>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="pwd" placeholder="Password" style="margin-left: 25%;"><br><br>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="btnSubmit " style="margin-left: 25%; background-color: rgb(14, 131, 240);">Login</button>
+                    
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
+{% endblock content %}

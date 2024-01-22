@@ -1,0 +1,62 @@
+{% extends 'admin_base.html' %}
+{% load static %}
+
+{% block content %}
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container register-form" style="margin-top: 3%;">
+        <div class="form ">
+            <div class="note">
+                <p>Add New Doctor To Hospital</p>
+            </div>
+            <div class="form-content">
+                <div class="row">
+                    <div class="col-md-6 ">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="" name="firstname" placeholder="firstname">
+                        </div><br>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="" name="username" placeholder="username">
+                        </div><br>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="" name="address" placeholder="address">
+                        </div><br>
+                        <div class="form-group">
+                            <select id="inputState" class="form-select" name="dept">
+                                <option selected>Department...</option>
+                                <option>Cardiologist</option>
+                                <option>Dermatologists</option>
+                                <option>General Medicine</option>
+                                <option>ENT</option>
+                                <option>Dental</option>
+                                <option>Pediatrician</option>
+                              </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="" name="lastname" placeholder="lastname">
+                        </div><br>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="" name="password" placeholder="password">
+                        </div><br>
+                        <div class="form-group">
+                            <input type="number" class="form-control" id="" name="phone" placeholder="phone">
+                        </div><br>
+                        <div class="form-group">
+                            <input type="file" class="form-control" name="pic" placeholder="photo">
+                        </div>
+                    </div>
+                </div> <br>
+                <button type="submit" class="btnSubmit">Register</button>
+            </div>
+            
+        </div>
+       
+    </div>
+
+</form>
+
+
+{% endblock content %}

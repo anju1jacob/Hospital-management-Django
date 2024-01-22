@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    body {
+        background-image: url('{% static "image/1.jpg" %}');
+        background-size: cover;
+        background-repeat: repeat;
+
+    }
+
+    a:link {
+        text-decoration: none;
+    }
+
+    .form-content {
+        padding: 5%;
+        margin-bottom: 2%;
+    }
+
+    .form-control {
+        border-radius: 1.5rem;
+    }
+
+    .btnSubmit {
+        border: none;
+        border-radius: 1.5rem;
+        padding: 1%;
+        width: 20%;
+        cursor: pointer;
+        background: #0062cc;
+        color: #fff;
+    }
+</style>
+</style>
+<div class="container mt-3">
+    <p class="lead text-center" style="color: white;"><b>Welcome to Hospital Management System.</b></p><br>
+    <div class="row">
+        <div class="card" style="width:300px;margin-left: 15%;">
+            <img class="card-img-top" src="{% static 'image/male-doctor.jpg' %}" alt="Card image" style="width:100%">
+            <div class="card-body text-center">
+                <h4 class="card-title">Hello, Doctor</h4>
+                <a class="btn btn-danger btn-lg" href=" doctor_signup" role="button">Apply</a>
+                <a class="btn btn-success btn-lg" href="loging" role="button">Login</a>
+            </div>
+        </div>
+        <div class="card" style="width:300px;margin-left: 15%;">
+            <img class="card-img-top" src="{% static 'image/patient.png' %}" alt="Card image" style="width:100%">
+            <div class="card-body text-center">
+                <h4 class="card-title">Hello, Patient</h4>
+                <a class="btn btn-danger btn-lg" href="/patientsignup" role="button">Register</a>
+                <a class="btn btn-success btn-lg" href="loging" role="button">Login</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

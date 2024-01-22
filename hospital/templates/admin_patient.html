@@ -1,0 +1,61 @@
+{% extends 'admin_base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container" style="margin-top: 5%;">
+    <div class="row">
+      <div class="col-md-4 col-xl-3">
+        <div class="card bg-c-blue order-card">
+          <div class="card-block">
+            <a href="/admin_view_patient">
+              <h6 class="m-b-20">Patient Record</h6>
+            </a>
+            <br>
+            <h2 class="text-right"><i class="fas fa-user-injured f-left"></i></h2>
+  
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-4 col-xl-3">
+        <div class="card bg-c-green order-card">
+          <div class="card-block">
+            <a href="admin_add_patient">
+              <h6 class="m-b-20">Admit Patient</h6>
+            </a>
+            <br>
+            <h2 class="text-right"><i class="fas fa-user-plus f-left"></i></h2>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-4 col-xl-3">
+        <div class="card bg-c-yellow order-card">
+          <div class="card-block">
+            <a href="/admin-approve-patient">
+              <h6 class="m-b-20">Approve Patient</h6>
+            </a>
+            <br>
+            <h2 class="text-right"><i class="fas fa-check-circle f-left"></i></h2>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-4 col-xl-3">
+        <div class="card bg-c-pink order-card">
+          <div class="card-block">
+            <a href="/admin-discharge-patient">
+              <h6 class="m-b-20">Discharge Patient</h6>
+            </a>
+            <br>
+            <h2 class="text-right"><i class="fas fa-eject f-left"></i></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+{% endblock content %}

@@ -1,0 +1,47 @@
+{% extends 'admin_base.html' %}
+{% load static %}
+
+{% block content %}
+
+<form method="post" >
+    {% csrf_token %}
+    <div class="container register-form" style="margin-top: 3%;">
+        <div class="form">
+            <div class="note">
+                <p>Book an Appointment</p>
+            </div>
+            <div class="form-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <textarea name="Description" id="" placeholder="Description" cols="70" rows="5"></textarea>
+                        </div><br><br>
+                        <div class="form-group">
+                            <select id="inputState" class="form-select" name="assignedDoctor" >
+                                <option selected value="">Department&Doctor...</option>
+                                {% for d in doctors %}
+                                <option value="{{ d.doctor_id_id }}"> {{d.doctor_id.first_name}} ({{ d.department}})</option>
+                                {% endfor %}
+                              </select>  
+                        </div><br><br>
+                        <div class="form-group">
+                            <select id="inputState" class="form-select" name="assignedpatient" >
+                                <option selected value="">Patient&symptoms...</option>
+                                {% for p in patients %}
+                                <option value="{{p.patient_id_id}}"> {{p.patient_id.first_name}} ({{ p.symptoms }})</option>
+                                {% endfor %}
+                              </select>  
+                        </div><br><br>
+                    </div>
+                </div> 
+                <button type="submit" class="btnSubmit">Book</button>
+            </div>
+            
+        </div>
+       
+    </div>
+
+</form>
+
+
+{% endblock content %}

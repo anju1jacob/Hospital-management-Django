@@ -1,0 +1,80 @@
+{% extends 'doctor_base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container" style="margin-top:3% ;">
+  <div class="row">
+      <div class="card" id="box1">
+          <div class="card-body">
+              <p class="card-text" >
+                <h3 style="color: white;">{{ appointmentcount }}</h3>
+                <h4 style="color: white;">Appointment</h4>
+              </p>
+              <div class="col-md-4 market-update-right">
+                <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                </div>
+          </div>
+      </div>
+  
+      <div class="card" id="box2">
+          <div class="card-body">
+              <p class="card-text" >
+              <h3 style="color: white;">{{patientcount}}</h3>
+              <h4 style="color: white;"> Patient Under You</h4>
+              
+              </p>
+              <div class="col-md-4 market-update-right">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                </div>
+          </div>
+      </div>
+      <div class="card" id="box3">
+          <div class="card-body">
+              <p class="card-text" >
+                <h3 style="color: white;"></h3>
+                <h4 style="color: white;">Discharged Patient</h4>
+              </p>
+              <div class="col-md-4 market-update-right">
+                  <i class="fa fa-check" aria-hidden="true"></i>
+                </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<br><br>
+<div class="container">
+  <div class="row">
+    <div class="panel panel-primary" >
+      <div class="panel-heading" style="text-align:center;">
+        <h6 class="panel-title">Recent Appointments For You</h6>
+      </div>
+      <table class="table table-hover table-striped" id="dev-table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Patient Name</th>
+            <th>Picture</th>
+            <th>Description</th>
+            <th>Contact</th>
+            <th>Address</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        {% for p,a in z %}
+          
+        <tr>
+          <td>{{p.patient_id.first_name}}</td>
+          <td> <img src="{{p.image.url}}" alt="Profile Pic" height="40px" width="40px" /></td>
+          <td>{{a.description}}</td>
+          <td>{{p.phone}}</td>
+          <td>{{p.address}}</td>
+          <td>{{a.appointmentDate}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

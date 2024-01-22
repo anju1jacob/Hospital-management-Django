@@ -1,0 +1,48 @@
+{% extends 'admin_base.html' %}
+{% load static %}
+
+{% block content %}
+
+<form action="/admin_update_doctor/{{ edit.id }}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container register-form" style="margin-top: 3%;">
+        <div class="form">
+            <div class="note">
+                <p>Add New Doctor To Hospital</p>
+            </div>
+            <div class="form-content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" value="{{ edit.doctor_id.first_name }}" name="firstname" placeholder="firstname">
+                        </div><br>
+                        <div class="form-group">
+                            <input type="text" class="form-control" value="{{ edit.doctor_id.username }}" name="username" placeholder="username">
+                        </div><br>
+                        <div class="form-group">
+                            <input type="text" class="form-control" value="{{ edit.address }}" name="address" placeholder="address">
+                        </div><br>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" value="{{ edit.doctor_id.last_name }}" name="lastname" placeholder="lastname">
+                        </div><br>
+                       
+                        <div class="form-group">
+                            <input type="number" class="form-control" value="{{ edit.phone }}" name="phone" placeholder="phone">
+                        </div><br>
+                        
+                    </div>
+                </div> <br>
+                <button type="submit" class="btnSubmit">Update</button>
+            </div>
+            
+        </div>
+       
+    </div>
+
+</form>
+
+
+{% endblock content %}
